@@ -4,44 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HIVX — Видео от ИИ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1e2a78, #2c0e58);
       color: #fff;
       display: flex;
     }
 
-    /* Боковое меню */
+    /* Сайдбар */
     .sidebar {
       width: 200px;
-      background: #111428;
-      padding: 20px;
-      height: 100vh;
       position: fixed;
       top: 0;
       left: 0;
+      height: 100vh;
+      background: rgba(17, 20, 40, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      box-shadow: 2px 0 10px #00000066;
+      gap: 15px;
     }
 
     .sidebar a {
-      color: #00ffff;
+      color: #ffffffcc;
       text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 12px;
       border-radius: 6px;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
     .sidebar a:hover {
-      background: #00ffff33;
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffff;
     }
 
-    /* Контейнер сайта */
+    /* Основной блок */
     .main-content {
       margin-left: 200px;
       padding: 30px;
@@ -50,7 +57,7 @@
 
     /* Поиск */
     .search-bar {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       display: flex;
       justify-content: center;
     }
@@ -58,23 +65,43 @@
     .search-bar input {
       width: 100%;
       max-width: 500px;
-      padding: 10px 15px;
+      padding: 12px 20px;
       border: none;
-      border-radius: 20px;
-      font-size: 16px;
+      border-radius: 30px;
+      font-size: 15px;
       box-shadow: 0 0 10px #00ffff55;
+      background: #ffffff15;
+      color: #ffffff;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: #ffffff;
       text-shadow: 0 0 10px #00ffffaa;
+      font-weight: 600;
     }
 
+    /* Новостной блок */
+    .news-block {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 4px solid #00ffff;
+      padding: 15px 20px;
+      margin: 20px auto 40px;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00ffff33;
+    }
+
+    .news-block strong {
+      color: #00ffff;
+      font-weight: 600;
+    }
+
+    /* Видео сетка */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 25px;
     }
 
@@ -102,15 +129,19 @@
       margin-top: 10px;
       font-size: 15px;
       color: #ffffffdd;
+      font-weight: 400;
     }
 
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none;
+    @media (max-width: 1024px) {
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
       .main-content {
         margin-left: 0;
         padding: 20px;
+      }
+      .sidebar {
+        display: none;
       }
     }
   </style>
@@ -119,22 +150,28 @@
 
   <!-- Меню -->
   <div class="sidebar">
-    <a href="#">🏠 Главная</a>
-    <a href="#">🎵 Музыка</a>
-    <a href="#">🎨 Арт-видео</a>
-    <a href="#">😂 Юмор</a>
-    <a href="#">🌍 Природа</a>
-    <a href="#">⚙️ Технологии</a>
+    <a href="#">Главная</a>
+    <a href="#">Музыка</a>
+    <a href="#">Арт-видео</a>
+    <a href="#">Юмор</a>
+    <a href="#">Природа</a>
+    <a href="#">Технологии</a>
   </div>
 
   <!-- Контент -->
   <div class="main-content">
     <div class="search-bar">
-      <input type="text" placeholder="🔍 Поиск по видео..." />
+      <input type="text" placeholder="Поиск по видео...">
     </div>
 
-    <h1>HIVX — Видео, созданные ИИ</h1>
+    <h1>HIVX — Видео, созданные искусственным интеллектом</h1>
 
+    <!-- Новостной блок -->
+    <div class="news-block">
+      <strong>🔥 Видео дня:</strong> Midjourney создаёт звуковую галлюцинацию — смотри новый клип в разделе «Музыка»!
+    </div>
+
+    <!-- Галерея -->
     <div class="video-grid">
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/D9W3p8iU1vU" allowfullscreen></iframe>
