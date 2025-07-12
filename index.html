@@ -18,7 +18,7 @@
       display: flex;
     }
 
-    /* 📱 Стеклянное меню */
+    /* 📱 Стеклянное меню + логотип + слоган */
     .sidebar {
       width: 160px;
       position: fixed;
@@ -31,12 +31,36 @@
       padding: 30px 15px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      align-items: center;
       box-shadow: 2px 0 10px #00000030;
       border-right: 1px solid rgba(255,255,255,0.2);
     }
 
-    .sidebar a {
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      font-size: 11px;
+      color: #ffffffcc;
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: auto;
+      margin-bottom: 30px;
+    }
+
+    .menu a {
       color: #ffffffdd;
       text-decoration: none;
       font-weight: 500;
@@ -44,9 +68,10 @@
       padding: 8px 10px;
       border-radius: 6px;
       transition: 0.3s ease;
+      text-align: center;
     }
 
-    .sidebar a:hover {
+    .menu a:hover {
       background: rgba(255, 255, 255, 0.1);
       color: #00ffff;
     }
@@ -73,14 +98,6 @@
       box-shadow: 0 0 10px #00ffff55;
       background: #ffffff15;
       color: #ffffff;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #ffffff;
-      text-shadow: 0 0 10px #00ffffaa;
-      font-weight: 600;
     }
 
     .video-grid {
@@ -132,14 +149,19 @@
 </head>
 <body>
 
-  <!-- Стеклянное меню -->
+  <!-- Боковое меню -->
   <div class="sidebar">
-    <a href="#">Главная</a>
-    <a href="#">Музыка</a>
-    <a href="#">Арт-видео</a>
-    <a href="#">Юмор</a>
-    <a href="#">Природа</a>
-    <a href="#">Технологии</a>
+    <div class="logo">HIVX.RU</div>
+    <div class="tagline">Хайвикс —<br>Видео, созданные<br>искусственным интеллектом</div>
+
+    <div class="menu">
+      <a href="#">Главная</a>
+      <a href="#">Музыка</a>
+      <a href="#">Арт-видео</a>
+      <a href="#">Юмор</a>
+      <a href="#">Природа</a>
+      <a href="#">Технологии</a>
+    </div>
   </div>
 
   <!-- Контент -->
@@ -147,8 +169,6 @@
     <div class="search-bar">
       <input type="text" placeholder="Поиск по видео...">
     </div>
-
-    <h1>HIVX — Видео, созданные искусственным интеллектом</h1>
 
     <div class="video-grid">
       <div class="video-card">
