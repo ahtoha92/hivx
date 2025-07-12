@@ -18,23 +18,23 @@
       display: flex;
     }
 
-    /* Сайдбар */
+    /* Обновлённое меню — нейтральное */
     .sidebar {
       width: 200px;
       position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
-      background: rgba(17, 20, 40, 0.4);
-      backdrop-filter: blur(10px);
+      background: #dfe3e9;
       padding: 30px 20px;
       display: flex;
       flex-direction: column;
       gap: 15px;
+      box-shadow: 2px 0 10px #00000033;
     }
 
     .sidebar a {
-      color: #ffffffcc;
+      color: #1c1c1c;
       text-decoration: none;
       font-weight: 500;
       font-size: 15px;
@@ -44,20 +44,18 @@
     }
 
     .sidebar a:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #00ffff;
+      background: #00ffff22;
+      color: #00aaaa;
     }
 
-    /* Основной блок */
     .main-content {
       margin-left: 200px;
       padding: 30px;
       width: 100%;
     }
 
-    /* Поиск */
     .search-bar {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       display: flex;
       justify-content: center;
     }
@@ -82,23 +80,6 @@
       font-weight: 600;
     }
 
-    /* Новостной блок */
-    .news-block {
-      background: rgba(255, 255, 255, 0.06);
-      border-left: 4px solid #00ffff;
-      padding: 15px 20px;
-      margin: 20px auto 40px;
-      max-width: 800px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #00ffff33;
-    }
-
-    .news-block strong {
-      color: #00ffff;
-      font-weight: 600;
-    }
-
-    /* Видео сетка */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -166,12 +147,6 @@
 
     <h1>HIVX — Видео, созданные искусственным интеллектом</h1>
 
-    <!-- Новостной блок -->
-    <div class="news-block">
-      <strong>🔥 Видео дня:</strong> Midjourney создаёт звуковую галлюцинацию — смотри новый клип в разделе «Музыка»!
-    </div>
-
-    <!-- Галерея -->
     <div class="video-grid">
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/D9W3p8iU1vU" allowfullscreen></iframe>
