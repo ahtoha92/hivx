@@ -3,83 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HIVX — Галерея ИИ-видео</title>
+  <title>HIVX — Видео от ИИ</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      padding: 30px;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #1e2a78, #2c0e58);
-      color: #ffffffcc;
+      color: #fff;
+      display: flex;
     }
+
+    /* Боковое меню */
+    .sidebar {
+      width: 200px;
+      background: #111428;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 2px 0 10px #00000066;
+    }
+
+    .sidebar a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #00ffff33;
+    }
+
+    /* Контейнер сайта */
+    .main-content {
+      margin-left: 200px;
+      padding: 30px;
+      width: 100%;
+    }
+
+    /* Поиск */
+    .search-bar {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-bar input {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      box-shadow: 0 0 10px #00ffff55;
+    }
+
     h1 {
       text-align: center;
+      margin-bottom: 20px;
       color: #ffffff;
       text-shadow: 0 0 10px #00ffffaa;
-      margin-bottom: 40px;
     }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
     }
+
     .video-card {
       background: #1a1a2f;
       border-radius: 12px;
       padding: 10px;
       box-shadow: 0 0 12px #00ffff55;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      transition: transform 0.2s ease;
     }
+
     .video-card:hover {
       transform: scale(1.02);
       box-shadow: 0 0 16px #00ffffaa;
     }
+
     iframe {
       width: 100%;
       height: 170px;
       border: none;
       border-radius: 6px;
     }
+
     h4 {
       margin-top: 10px;
       font-size: 15px;
       color: #ffffffdd;
     }
-    @media (min-width: 1024px) {
-      .video-grid {
-        grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <h1>🎬 HIVX — Видео от искусственного интеллекта</h1>
 
-  <div class="video-grid">
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/D9W3p8iU1vU" allowfullscreen></iframe>
-      <h4>Нейрокот на марсе</h4>
+  <!-- Меню -->
+  <div class="sidebar">
+    <a href="#">🏠 Главная</a>
+    <a href="#">🎵 Музыка</a>
+    <a href="#">🎨 Арт-видео</a>
+    <a href="#">😂 Юмор</a>
+    <a href="#">🌍 Природа</a>
+    <a href="#">⚙️ Технологии</a>
+  </div>
+
+  <!-- Контент -->
+  <div class="main-content">
+    <div class="search-bar">
+      <input type="text" placeholder="🔍 Поиск по видео..." />
     </div>
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/ydkTfFnAc2g" allowfullscreen></iframe>
-      <h4>AI симфония света</h4>
-    </div>
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-      <h4>Сюрпризный глитч 😎</h4>
-    </div>
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/R3qUP0EVzA8" allowfullscreen></iframe>
-      <h4>ИИ: Город будущего</h4>
-    </div>
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/1OlrsP1JOwo" allowfullscreen></iframe>
-      <h4>Midjourney + музыка</h4>
-    </div>
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" allowfullscreen></iframe>
-      <h4>AI видение океана</h4>
+
+    <h1>HIVX — Видео, созданные ИИ</h1>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/D9W3p8iU1vU" allowfullscreen></iframe>
+        <h4>Нейрокот на марсе</h4>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/ydkTfFnAc2g" allowfullscreen></iframe>
+        <h4>AI симфония света</h4>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <h4>Сюрпризный глитч 😎</h4>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/R3qUP0EVzA8" allowfullscreen></iframe>
+        <h4>ИИ: Город будущего</h4>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/1OlrsP1JOwo" allowfullscreen></iframe>
+        <h4>Midjourney + музыка</h4>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" allowfullscreen></iframe>
+        <h4>AI видение океана</h4>
+      </div>
     </div>
   </div>
+
 </body>
 </html>
