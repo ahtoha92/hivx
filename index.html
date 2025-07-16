@@ -6,6 +6,35 @@
   <title>HIVX — Видео от ИИ</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
+
+.mobile-menu {
+  display: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mobile-menu select {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  background-color: #ffffff15;
+  color: white;
+  border: none;
+  box-shadow: 0 0 10px #00ffff55;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Показываем только на мобильных */
+@media (max-width: 1024px) {
+  .mobile-menu {
+    display: block;
+  }
+  .sidebar {
+    display: none; /* скрываем старое меню */
+  }
+}
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -75,27 +104,7 @@
   color: #ffffff;
 }
 
-.mobile-menu {
-  display: none;
-  margin-bottom: 20px;
-  text-align: center;
-}
 
-.mobile-menu select {
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 16px;
-  background-color: #ffffff15;
-  color: white;
-  border: none;
-  box-shadow: 0 0 10px #00ffff55;
-}
-
-@media (max-width: 1024px) {
-  .mobile-menu {
-    display: block;
-  }
-}
 
     .menu a:hover {
       background: rgba(255, 255, 255, 0.1);
@@ -182,23 +191,7 @@
 </head>
 <body>
 
-<!-- Мобильное меню (появится только на малых экранах) -->
-<div class="mobile-menu">
-  <select onchange="location.href=this.value;">
-    <option disabled selected>Категории</option>
-    <option value="#">Главная</option>
-    <option value="#">Музыка от AI</option>
-    <option value="#">Арт от AI</option>
-    <option value="#">Юмор от AI</option>
-    <option value="#">Природа от AI</option>
-    <option value="#">Технологии от AI</option>
-    <option value="#">Сказочное AI</option>
-    <option value="#">Мини-фильмы</option>
-    <option value="#">Ретро-стиль</option>
-    <option value="#">Город будущего</option>
-    <option value="#">Глитч/Нейроарт</option>
-  </select>
-</div>
+
 
   <!-- Боковое меню -->
   <div class="sidebar">
@@ -221,6 +214,22 @@
 
   <!-- Контент -->
   <div class="main-content">
+<div class="mobile-menu">
+  <select onchange="location.href=this.value;">
+    <option disabled selected>Категории</option>
+    <option value="#">Главная</option>
+    <option value="#">Музыка от AI</option>
+    <option value="#">Арт от AI</option>
+    <option value="#">Юмор от AI</option>
+    <option value="#">Природа от AI</option>
+    <option value="#">Технологии от AI</option>
+    <option value="#">Сказочное AI</option>
+    <option value="#">Мини-фильмы</option>
+    <option value="#">Ретро-стиль</option>
+    <option value="#">Город будущего</option>
+    <option value="#">Глитч/Нейроарт</option>
+  </select>
+</div>
     <div class="search-bar">
       <input type="text" placeholder="Поиск по видео...">
     </div>
