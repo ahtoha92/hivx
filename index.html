@@ -6,6 +6,7 @@
   <title>HIVX — Видео от ИИ</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
+
 .mobile-menu {
   display: none;
   margin-bottom: 20px;
@@ -22,6 +23,16 @@
   box-shadow: 0 0 10px #00ffff55;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+/* Показываем только на мобильных */
+@media (max-width: 1024px) {
+  .mobile-menu {
+    display: block;
+  }
+  .sidebar {
+    display: none; /* скрываем старое меню */
+  }
 }
 
     * {
@@ -66,7 +77,7 @@
       flex-direction: column;
       gap: 15px;
       width: 100%;
-      margin-top: 80px; /* <-- немного ниже, как просил */
+      margin-top: 80px; /* немного ниже */
     }
 
     .menu a {
@@ -79,20 +90,6 @@
       transition: 0.3s ease;
       text-align: left;
     }
-
-.tagline {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 30px;
-  text-shadow: 0 0 8px #3fcaff, 0 0 12px #3fcaff;
-}
-
-.highlight {
-  color: #ffffff;
-}
-
 
     .menu a:hover {
       background: rgba(255, 255, 255, 0.1);
@@ -130,10 +127,11 @@
       margin-bottom: 30px;
     }
 
+    /* Исправление для корректного отображения сетки видео */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Автоматически адаптируем количество колонок */
+      gap: 20px; /* Отступ между видеофреймами */
     }
 
     .video-card {
@@ -161,12 +159,10 @@
       font-size: 15px;
       color: #ffffffdd;
       font-weight: 400;
+      text-align: center;
     }
 
     @media (max-width: 1024px) {
-      .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
       .main-content {
         margin-left: 0;
         padding: 20px;
@@ -182,91 +178,84 @@
   <!-- Боковое меню -->
   <div class="sidebar">
     <div class="logo">HIVX.RU</div>
-<div class="menu">
-  <a href="#">Главная</a>
-  <a href="#">Музыка от AI</a>
-  <a href="#">Арт от AI</a>
-  <a href="#">Юмор от AI</a>
-  <a href="#">Природа от AI</a>
-  <a href="#">Технологии от AI</a>
-  <a href="#">Сказочное AI</a>
-  <a href="#">Мини-фильмы</a>
-  <a href="#">Ретро-стиль</a>
-  <a href="#">Город будущего</a>
-  <a href="#">Глитч/Нейроарт</a>
-</div>
-
+    <div class="menu">
+      <a href="#">Главная</a>
+      <a href="#">Музыка от AI</a>
+      <a href="#">Арт от AI</a>
+      <a href="#">Юмор от AI</a>
+      <a href="#">Природа от AI</a>
+      <a href="#">Технологии от AI</a>
+      <a href="#">Сказочное AI</a>
+      <a href="#">Мини-фильмы</a>
+      <a href="#">Ретро-стиль</a>
+      <a href="#">Город будущего</a>
+      <a href="#">Глитч/Нейроарт</a>
+    </div>
   </div>
 
   <!-- Контент -->
   <div class="main-content">
- <!-- Контент -->
-  <div class="main-content">
-<div class="mobile-menu">
-  <select onchange="location.href=this.value;">
-    <option disabled selected>Категории</option>
-    <option value="#">Главная</option>
-    <option value="#">Музыка от AI</option>
-    <option value="#">Арт от AI</option>
-    <option value="#">Юмор от AI</option>
-    <option value="#">Природа от AI</option>
-    <option value="#">Технологии от AI</option>
-    <option value="#">Сказочное AI</option>
-    <option value="#">Мини-фильмы</option>
-    <option value="#">Ретро-стиль</option>
-    <option value="#">Город будущего</option>
-    <option value="#">Глитч/Нейроарт</option>
-  </select>
-</div>
+    <div class="mobile-menu">
+      <select onchange="location.href=this.value;">
+        <option disabled selected>Категории</option>
+        <option value="#">Главная</option>
+        <option value="#">Музыка от AI</option>
+        <option value="#">Арт от AI</option>
+        <option value="#">Юмор от AI</option>
+        <option value="#">Природа от AI</option>
+        <option value="#">Технологии от AI</option>
+        <option value="#">Сказочное AI</option>
+        <option value="#">Мини-фильмы</option>
+        <option value="#">Ретро-стиль</option>
+        <option value="#">Город будущего</option>
+        <option value="#">Глитч/Нейроарт</option>
+      </select>
+    </div>
+    
     <div class="search-bar">
       <input type="text" placeholder="Поиск по видео..." id="searchInput">
     </div>
 
     <div class="tagline">Хайвикс — <span class="highlight">видео, сгенерированное искусственным интеллектом</span></div>
 
-
     <div class="video-grid">
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/D9W3p8iU1vU" allowfullscreen></iframe>
-        <h4>Нейрокот на марсе</h4>
-      </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/ydkTfFnAc2g" allowfullscreen></iframe>
-        <h4>AI симфония света</h4>
-      </div>
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         <h4>Сюрпризный глитч 😎</h4>
       </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/R3qUP0EVzA8" allowfullscreen></iframe>
-        <h4>ИИ: Город будущего</h4>
-      </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/1OlrsP1JOwo" allowfullscreen></iframe>
-        <h4>Midjourney + музыка</h4>
-      </div>
+
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" allowfullscreen></iframe>
         <h4>AI видение океана</h4>
       </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/5rpcO6P4zrs" allowfullscreen></iframe>
+        <h4>Neural Pulse – AI Intro Theme (Suno.AI + Vizzy Visualizer)</h4>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/nbd5nYCmjfA" allowfullscreen></iframe>
+        <h4>HEJJAYTI Pt. VII – AI‑generated music video</h4>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/6WXzMPbxyH4" allowfullscreen></iframe>
+        <h4>Poop Face Song – Комичный AI-трек</h4>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/CSYgqznyVOo" allowfullscreen></iframe>
+        <h4>Electro-Swing AI Clip (Luma+Pixverse)</h4>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/TQEnCNXK5CQ" allowfullscreen></iframe>
+        <h4>Longing for Tomorrow – Indie AI</h4>
+      </div>
+
+      <!-- Добавьте еще видеофреймы по мере необходимости -->
     </div>
   </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("searchInput");
-    const videoCards = document.querySelectorAll(".video-card");
-
-    searchInput.addEventListener("input", function () {
-      const query = this.value.trim().toLowerCase();
-
-      videoCards.forEach(card => {
-        const title = card.querySelector("h4")?.textContent.toLowerCase() || "";
-        card.style.display = title.includes(query) ? "block" : "none";
-      });
-    });
-  });
-</script>
 </body>
 </html>
