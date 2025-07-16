@@ -219,43 +219,85 @@
     <div class="tagline">Хайвикс — <span class="highlight">видео, сгенерированное искусственным интеллектом</span></div>
 
     <div class="video-grid">
+      <!-- Видео 1 -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         <h4>Сюрпризный глитч 😎</h4>
       </div>
 
+      <!-- Видео 2 -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" allowfullscreen></iframe>
         <h4>AI видение океана</h4>
       </div>
 
+      <!-- Видео 3 -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/5rpcO6P4zrs" allowfullscreen></iframe>
         <h4>Neural Pulse – AI Intro Theme (Suno.AI + Vizzy Visualizer)</h4>
       </div>
 
+      <!-- Видео 4 -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/nbd5nYCmjfA" allowfullscreen></iframe>
         <h4>HEJJAYTI Pt. VII – AI‑generated music video</h4>
       </div>
 
+      <!-- Видео 5 -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/6WXzMPbxyH4" allowfullscreen></iframe>
         <h4>Poop Face Song – Комичный AI-трек</h4>
       </div>
 
+      <!-- Видео 6 -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/CSYgqznyVOo" allowfullscreen></iframe>
         <h4>Electro-Swing AI Clip (Luma+Pixverse)</h4>
       </div>
 
+      <!-- Видео 7 -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/TQEnCNXK5CQ" allowfullscreen></iframe>
         <h4>Longing for Tomorrow – Indie AI</h4>
       </div>
 
-      <!-- Добавьте еще видеофреймы по мере необходимости -->
+      <!-- Видео 8 -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/1NbdzIks9H0" allowfullscreen></iframe>
+        <h4>AI Generated Music - Ambient Soundscapes</h4>
+      </div>
+
+      <!-- Видео 9 -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/s8vTq4tWscA" allowfullscreen></iframe>
+        <h4>Artificial Intelligence Creates Jazz Music</h4>
+      </div>
+
+      <!-- Видео 10 -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/qXeEEC6EFAE" allowfullscreen></iframe>
+        <h4>AI Composed Electronic Dance Music</h4>
+      </div>
+
+      <!-- Добавьте другие видеофреймы по аналогии -->
     </div>
   </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function() {
+      const query = searchInput.value.toLowerCase();
+      const videoCards = document.querySelectorAll('.video-card');
+
+      videoCards.forEach(card => {
+        const title = card.querySelector('h4').textContent.toLowerCase();
+        if (title.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
